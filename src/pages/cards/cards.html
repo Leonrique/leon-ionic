@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Itens da cotação</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list ion-item *ngFor="let item of itens">
+    <ion-row>
+      <ion-col>
+        Item: {{ item.codigo }} - {{ item.descricao }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col begin>
+        Qtde.: {{ item.qtde | number:'2.0-0' }}
+      </ion-col>
+      <ion-col>
+        Preço: {{ item.preco | currency:"R$" }}
+      </ion-col>
+      <ion-col end>
+        Total: {{ item.total | currency:"R$" }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Marca: {{ item.marca }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Fornecedor: {{ item.codigoFornecedor }} - {{ item.descricaoFornecedor }}
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
