@@ -1,5 +1,7 @@
 {
   "name": "leon-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
