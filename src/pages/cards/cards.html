@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar style="background-color: bisque;">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,7 +7,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="lp-back">
+  <ion-item>
+    <ion-input placeholder="Some..."></ion-input>
+  </ion-item>
   <ion-list ion-item *ngFor="let item of itens">
     <ion-row>
       <ion-col>
