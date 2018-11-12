@@ -8,6 +8,7 @@ export class ItensCotacao {
     codigoFornecedor: number;
     descricaoFornecedor: string
 
+    
     constructor(codigo: number, descricao: string, qtde: number, preco: number, total: number,
         marca: string, codigoFornecedor: number, descricaoFornecedor: string) {
         this.codigo = codigo;
