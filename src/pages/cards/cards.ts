@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ItensCotacao } from '../../models/itensCotacao';
+import { HeroServiceProvider } from '../../providers/hero-service/hero-service';
 
 /**
  * Generated class for the CardsPage page.
@@ -15,6 +16,9 @@ import { ItensCotacao } from '../../models/itensCotacao';
   templateUrl: 'cards.html',
 })
 export class CardsPage {
+  public obj: any;
+  public heroes: any;
+
   public itens: Array<ItensCotacao> = [
     { codigo: 1, descricao: "parafuso", qtde: 1, preco: 10, total: 10, marca: "Bosch", codigoFornecedor: 1, descricaoFornecedor: "Belota" },
     { codigo: 2, descricao: "porca", qtde: 1, preco: 10, total: 10, marca: "Bosch", codigoFornecedor: 1, descricaoFornecedor: "Skill" },
@@ -28,10 +32,17 @@ export class CardsPage {
   item2 = new ItensCotacao(1, "parafuso", 1, 10, 10, "bosch", 10, "Casa do parafuso")
   item3 = new ItensCotacao(1, "parafuso", 1, 10, 10, "bosch", 10, "Casa do parafuso")
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    /* this.itens.push(this.item1);
-    this.itens.push(this.item2);
-    this.itens.push(this.item3); */
+  constructor(public navCtrl: NavController, public navParams: NavParams, public heroService: HeroServiceProvider) {
+    this.getAllHeroes()
+    //this.getAllHeroes()
+  }
+
+  getAllHeroes() {
+    this.heroService.load()
+      .then(data => {
+        this.obj = data;
+        this.heroes = this.obj.data.results;
+      });
   }
 
   ionViewDidLoad() {
