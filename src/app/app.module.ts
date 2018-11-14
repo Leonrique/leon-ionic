@@ -7,11 +7,13 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { CardsPage } from '../pages/cards/cards';
+import { DescriptionPage } from '../pages/description/description';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HeroServiceProvider } from '../providers/hero-service/hero-service';
 import { HttpModule } from '@angular/http';
+import { DescriptionPageModule } from '../pages/description/description.module';
 
 @NgModule({
   declarations: [

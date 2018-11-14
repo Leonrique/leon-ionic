@@ -45,6 +45,13 @@ export class CardsPage {
       });
   }
 
+  getDescription(id: number) {
+    console.log(id);
+    this.navCtrl.push("DescriptionPage", {
+      id: id
+    })
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CardsPage');
   }
